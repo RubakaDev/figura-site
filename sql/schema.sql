@@ -56,11 +56,6 @@ CREATE TABLE IF NOT EXISTS figure_images (
     INDEX idx_sort_order (sort_order)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Создание первого администратора
--- Пароль по умолчанию: admin123 (ОБЯЗАТЕЛЬНО СМЕНИТЬ!)
-INSERT INTO admins (username, password_hash) VALUES
-('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
-
 -- Примеры новостей для демонстрации
 INSERT INTO news (title, content) VALUES
 ('Добро пожаловать на сайт!', 'Рады приветствовать вас на нашем сайте, посвящённом 3D-фигуркам. Здесь вы найдёте уникальные модели для печати и коллекционирования.'),
