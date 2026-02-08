@@ -1,0 +1,171 @@
+/* Figura Site - Custom Styles */
+
+:root {
+    --primary-color: #6f42c1;
+    --secondary-color: #495057;
+}
+
+/* Layout */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Cards */
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Figure cards */
+.figure-card {
+    height: 100%;
+}
+
+.figure-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    background-color: #f8f9fa;
+}
+
+.figure-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.figure-card .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.figure-card .card-text {
+    flex-grow: 1;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* News cards */
+.news-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+.news-card .news-date {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Gallery */
+.gallery-thumb {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.gallery-thumb:hover {
+    opacity: 0.8;
+}
+
+.gallery-main {
+    max-height: 500px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+}
+
+/* Download button */
+.btn-download {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn-download:hover {
+    background-color: #5a32a3;
+    border-color: #5a32a3;
+    color: white;
+}
+
+/* Stats badge */
+.stats-badge {
+    font-size: 0.75rem;
+}
+
+/* Search form */
+.search-form {
+    max-width: 400px;
+}
+
+/* Pagination */
+.pagination .page-link {
+    color: var(--primary-color);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Admin styles */
+.admin-sidebar {
+    min-height: calc(100vh - 56px);
+}
+
+.admin-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.admin-nav .nav-link:hover,
+.admin-nav .nav-link.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-content {
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 56px);
+}
+
+/* File upload preview */
+.upload-preview {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+
+/* Empty state */
+.empty-state {
+    padding: 3rem;
+    text-align: center;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .figure-card .card-img-top {
+        height: 150px;
+    }
+
+    .gallery-main {
+        max-height: 300px;
+    }
+}

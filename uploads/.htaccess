@@ -1,0 +1,14 @@
+# Запретить выполнение PHP в этой директории
+<FilesMatch "\.php$">
+    Deny from all
+</FilesMatch>
+
+# Для Apache 2.4+
+<IfModule mod_authz_core.c>
+    <FilesMatch "\.php$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+# Разрешить доступ к файлам
+Options -Indexes
