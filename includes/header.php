@@ -26,7 +26,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link <?= $currentPage === 'index.php' ? 'active' : '' ?>" href="<?= SITE_URL ?>/">
                             <i class="bi bi-house"></i> Главная
@@ -37,6 +37,32 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                             <i class="bi bi-grid"></i> Каталог
                         </a>
                     </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <?php if (isUserLoggedIn()): ?>
+                        <?php $currentUser = getCurrentUser(); ?>
+                        <li class="nav-item">
+                            <a class="nav-link <?= $currentPage === 'profile.php' ? 'active' : '' ?>" href="<?= SITE_URL ?>/profile.php">
+                                <i class="bi bi-person-circle"></i> <?= e($currentUser['username']) ?>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= SITE_URL ?>/logout.php">
+                                <i class="bi bi-box-arrow-right"></i> Выход
+                            </a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link <?= $currentPage === 'login.php' ? 'active' : '' ?>" href="<?= SITE_URL ?>/login.php">
+                                <i class="bi bi-box-arrow-in-right"></i> Вход
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= $currentPage === 'register.php' ? 'active' : '' ?>" href="<?= SITE_URL ?>/register.php">
+                                <i class="bi bi-person-plus"></i> Регистрация
+                            </a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

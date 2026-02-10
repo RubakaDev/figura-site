@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Confirm delete
     initDeleteConfirm();
+
+    // Registration form validation
+    initRegisterValidation();
 });
 
 /**
@@ -92,4 +95,30 @@ function validateForm(form) {
     });
 
     return isValid;
+}
+
+/**
+ * Registration form password match validation
+ */
+function initRegisterValidation() {
+    const form = document.getElementById('register-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        const password = form.querySelector('#password');
+        const confirm = form.querySelector('#password_confirm');
+
+        if (password && confirm && password.value !== confirm.value) {
+            e.preventDefault();
+            confirm.classList.add('is-invalid');
+
+            let feedback = confirm.nextElementSibling;
+            if (!feedback || !feedback.classList.contains('invalid-feedback')) {
+                feedback = document.createElement('div');
+                feedback.className = 'invalid-feedback';
+                confirm.parentNode.appendChild(feedback);
+            }
+            feedback.textContent = 'Пароли не совпадают';
+        }
+    });
 }

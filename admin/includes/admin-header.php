@@ -57,6 +57,12 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                             <i class="bi bi-box"></i> Фигурки
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link <?= $currentPage === 'orders.php' ? 'active' : '' ?>"
+                           href="<?= SITE_URL ?>/admin/orders.php">
+                            <i class="bi bi-cart"></i> Заявки
+                        </a>
+                    </li>
                     <li class="nav-item mt-3 pt-3 border-top border-secondary">
                         <a class="nav-link <?= $currentPage === 'password.php' ? 'active' : '' ?>"
                            href="<?= SITE_URL ?>/admin/password.php">

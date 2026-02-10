@@ -159,6 +159,32 @@ main {
     margin-bottom: 1rem;
 }
 
+/* Comments */
+.comment-card {
+    border-left: 3px solid var(--primary-color);
+    transition: none;
+}
+
+.comment-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Auth forms */
+.card.shadow-sm:hover {
+    transform: none;
+}
+
+/* Profile tabs */
+.nav-tabs .nav-link {
+    color: var(--secondary-color);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .figure-card .card-img-top {
